@@ -8,7 +8,7 @@ const fs = require("fs");
 
 const postDO = async (req = request, res = response) => {
   try {
-    const { id_item, lapso_inicio, lapso_fin, id_co } = req.body; // Si los parámetros vienen en el cuerpo de la solicitud
+    const { id_item, lapso_inicio, lapso_fin, id_co } = matchedData(req); // Si los parámetros vienen en el cuerpo de la solicitud
 
     if (!id_item || !lapso_inicio || !lapso_fin || !id_co) {
       return res.status(400).send({
